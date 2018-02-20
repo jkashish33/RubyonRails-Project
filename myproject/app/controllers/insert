@@ -1,0 +1,10 @@
+CREATE FUNCTION insert(_name, _email, _number, _member)
+  RETURNS void AS
+  $BODY$
+      BEGIN
+        INSERT INTO guest(name, email, number, member)
+        VALUES(_name, _email, _number, _member);
+      END;
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
